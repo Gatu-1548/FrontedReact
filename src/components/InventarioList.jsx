@@ -70,7 +70,7 @@ const InventarioList = () => {
     const fetchInventario = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:8080/api/inventario/detalles', {
+        const response = await axios.get('https://backendspring.onrender.com/api/inventario/detalles', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

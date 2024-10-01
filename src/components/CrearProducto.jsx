@@ -348,7 +348,7 @@ const CrearProducto = () => {
   
       // Realizar la petición POST al backend para crear el producto con imagen y colores
       const response = await axios.post(
-        'http://localhost:8080/api/productos/crear-con-imagen-y-inventario',
+        'https://backendspring.onrender.com/api/productos/crear-con-imagen-y-inventario',
         formData,
         {
           headers: {

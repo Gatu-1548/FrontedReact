@@ -10,7 +10,7 @@ const CrearCategoria = () => {
   useEffect(() => {
     const fetchCategorias = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/categorias/listar');
+        const response = await axios.get('https://backendspring.onrender.com/api/categorias/listar');
         setCategorias(response.data);
       } catch (error) {
         console.error('Error al obtener las categorías', error);
@@ -22,7 +22,7 @@ const CrearCategoria = () => {
 
   const handleCrearCategoria = async () => {
     try {
-      const response = await axios.post('http://localhost:8080/api/categorias/crear', { nombre });
+      const response = await axios.post('https://backendspring.onrender.com/api/categorias/crear', { nombre });
       alert('Categoría creada: ' + response.data.nombre);
       setCategorias((prevCategorias) => [...prevCategorias, response.data]); // Agregar nueva categoría a la lista
     } catch (error) {

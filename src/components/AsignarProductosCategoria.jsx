@@ -12,7 +12,7 @@ const AsignarProductosACategoria = () => {
   useEffect(() => {
     const fetchCategorias = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/categorias/listar');
+        const response = await axios.get('https://backendspring.onrender.com/api/categorias/listar');
         if (Array.isArray(response.data)) {
           setCategorias(response.data);
         } else {
@@ -25,7 +25,7 @@ const AsignarProductosACategoria = () => {
 
     const fetchProductos = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/productos');
+        const response = await axios.get('https://backendspring.onrender.com/api/productos');
         if (Array.isArray(response.data)) {
           setProductos(response.data);
         } else {
@@ -47,7 +47,7 @@ const AsignarProductosACategoria = () => {
     }
 
     try {
-      await axios.post(`http://localhost:8080/api/categorias/${selectedCategoria}/asignar-productos`, selectedProductos);
+      await axios.post(`https://backendspring.onrender.com/api/categorias/${selectedCategoria}/asignar-productos`, selectedProductos);
       Swal.fire('Asignación exitosa', 'Los productos han sido asignados a la categoría correctamente.', 'success');
     } catch (error) {
       Swal.fire('Error', 'Hubo un error al asignar los productos a la categoría.', 'error');

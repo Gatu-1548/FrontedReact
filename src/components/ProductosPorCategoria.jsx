@@ -17,7 +17,7 @@ const ProductosPorCategoria = () => {
     }
 
     try {
-      const response = await axios.get(`http://localhost:8080/api/productos/categoria/${categoriaSeleccionada}`, {
+      const response = await axios.get(`https://backendspring.onrender.com/api/productos/categoria/${categoriaSeleccionada}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -54,7 +54,7 @@ const ProductosPorCategoria = () => {
     const cantidad = cantidades[productoId] || 1;
     try {
       await axios.post(
-        'http://localhost:8080/api/carrito/agregar',
+        'https://backendspring.onrender.com/api/carrito/agregar',
         {
           producto: { id: productoId },
           cantidad: cantidad,
@@ -105,7 +105,7 @@ const ProductosPorCategoria = () => {
           productos.map((producto) => (
             <div key={producto.id} style={styles.productCard}>
               <img
-                src={`http://localhost:8080/api/productos/imagen/${producto.imagenUrl.split('/').pop()}`}
+                src={`https://backendspring.onrender.com/api/productos/imagen/${producto.imagenUrl.split('/').pop()}`}
                 alt={producto.nombre}
                 style={styles.productImage}
               />

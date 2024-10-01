@@ -23,7 +23,7 @@ const Perfil = () => {
       }
 
       try {
-        const response = await axios.get('http://localhost:8080/api/users/perfil', {
+        const response = await axios.get('https://backendspring.onrender.com/api/users/perfil', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUserData(response.data);
@@ -47,7 +47,7 @@ const Perfil = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await axios.put('http://localhost:8080/api/users/perfil', userData, {
+      await axios.put('https://backendspring.onrender.com/api/users/perfil', userData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       Swal.fire({
@@ -68,7 +68,7 @@ const Perfil = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await axios.put('http://localhost:8080/api/users/perfil/cambiar-contraseña', passwords, {
+      await axios.put('https://backendspring.onrender.com/api/users/perfil/cambiar-contraseña', passwords, {
         headers: { Authorization: `Bearer ${token}` }
       });
       Swal.fire({

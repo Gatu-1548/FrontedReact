@@ -117,7 +117,7 @@ const ProductosList = () => {
     const token = localStorage.getItem('token');
     const fetchProductos = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/productos', {
+        const response = await axios.get('https://backendspring.onrender.com/api/productos', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -143,7 +143,7 @@ const ProductosList = () => {
     const token = localStorage.getItem('token');
     const cantidad = cantidades[productoId] || 1; // Usar la cantidad seleccionada, por defecto 1 si no se ha seleccionado
     try {
-      const response = await axios.post('http://localhost:8080/api/carrito/agregar', {
+      const response = await axios.post('https://backendspring.onrender.com/api/carrito/agregar', {
         producto: { id: productoId },
         cantidad: cantidad,
       }, {
@@ -174,7 +174,7 @@ const ProductosList = () => {
       <div className="productos-grid">
         {productos.map((producto) => (
           <div key={producto.id} className="producto-card">
-            <img src={`http://localhost:8080/api/productos/imagen/${producto.imagenUrl.split('/').pop()}`} alt={producto.nombre} className="producto-imagen" />
+            <img src={`https://backendspring.onrender.com/api/productos/imagen/${producto.imagenUrl.split('/').pop()}`} alt={producto.nombre} className="producto-imagen" />
             <h3>{producto.nombre}</h3>
             <p>{producto.descripcion}</p>
             <p><strong>Precio:</strong> ${producto.precio}</p>

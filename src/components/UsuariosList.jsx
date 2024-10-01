@@ -14,7 +14,7 @@ const UsuariosList = () => {
     
     const fetchUsuarios = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/users/all', {
+        const response = await axios.get('https://backendspring.onrender.com/api/users/all', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUsuarios(response.data);
@@ -25,7 +25,7 @@ const UsuariosList = () => {
 
     const fetchRoles = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/users/roles', {
+        const response = await axios.get('https://backendspring.onrender.com/api/users/roles', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setRoles(response.data);
@@ -68,7 +68,7 @@ const UsuariosList = () => {
         // Si el usuario confirma, se realiza la asignación del rol
         const token = localStorage.getItem('token');
         axios.put(
-          'http://localhost:8080/api/users/asignar-rol',
+          'https://backendspring.onrender.com/api/users/asignar-rol',
           { username, roleName: role },
           { headers: { Authorization: `Bearer ${token}` } }
         )

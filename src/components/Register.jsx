@@ -15,7 +15,7 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080//api/users/register', {
+      const response = await axios.post('https://backendspring.onrender.com//api/users/register', {
         username,
         password,
         fullName,

@@ -65,7 +65,7 @@ const CarritoDeCompras = () => {
     const token = localStorage.getItem('token');
     const fetchCarrito = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/carrito/obtener', {
+        const response = await axios.get('https://backendspring.onrender.com/api/carrito/obtener', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -135,7 +135,7 @@ const CarritoDeCompras = () => {
     const token = localStorage.getItem('token');
     try {
       // Realizar la solicitud DELETE al backend para eliminar el producto del carrito
-      await axios.delete(`http://localhost:8080/api/carrito/eliminar/${productoId}`, {
+      await axios.delete(`https://backendspring.onrender.com/api/carrito/eliminar/${productoId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
