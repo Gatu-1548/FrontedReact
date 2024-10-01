@@ -1,0 +1,136 @@
+/* Contenedor principal del perfil */
+.profile-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de los encabezados */
+.profile-container h2, h3 {
+  text-align: center;
+  color: #333;
+}
+
+/* Estilos generales de los formularios */
+.profile-form, .password-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Etiquetas de los formularios */
+.profile-form label, .password-form label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Campos de entrada de los formularios */
+.profile-form input, .password-form input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+/* Botones */
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+/* Mensajes de éxito y error */
+.success-message {
+  color: green;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+}
+
+/* Responsividad para pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+  .profile-container {
+    width: 90%; /* Asegura que el contenedor ocupe el 90% del ancho */
+    margin: 30px auto; /* Reduce el margen superior e inferior */
+  }
+
+  .profile-form input, .password-form input {
+    font-size: 15px; /* Tamaño de fuente más pequeño */
+  }
+
+  .btn {
+    font-size: 15px; /* Tamaño de fuente del botón ajustado */
+    padding: 10px 15px; /* Ajustar el padding del botón */
+  }
+}
+
+/* Responsividad para pantallas pequeñas (dispositivos móviles) */
+@media (max-width: 768px) {
+  .profile-container {
+    width: 95%; /* Ancho del contenedor ajustado para móviles */
+    padding: 15px; /* Padding reducido */
+  }
+
+  .profile-container h2, h3 {
+    font-size: 20px; /* Tamaño del encabezado reducido */
+  }
+
+  .profile-form input, .password-form input {
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+  }
+
+  .btn {
+    font-size: 14px; /* Tamaño de fuente del botón ajustado */
+    padding: 10px 15px; /* Ajustar el padding del botón */
+  }
+}
+
+/* Responsividad para pantallas muy pequeñas (dispositivos con menos de 480px de ancho) */
+@media (max-width: 480px) {
+  .profile-container {
+    width: 100%; /* Contenedor ocupa todo el ancho */
+    padding: 10px; /* Padding reducido */
+  }
+
+  .profile-container h2, h3 {
+    font-size: 18px; /* Tamaño del encabezado reducido */
+  }
+
+  .profile-form label, .password-form label {
+    font-size: 14px; /* Tamaño de fuente de las etiquetas reducido */
+  }
+
+  .profile-form input, .password-form input {
+    font-size: 13px; /* Tamaño de fuente más pequeño */
+    padding: 8px; /* Reducir el padding en campos de entrada */
+  }
+
+  .btn {
+    font-size: 13px; /* Tamaño de fuente del botón ajustado */
+    padding: 8px 12px; /* Ajustar el padding del botón */
+  }
+}

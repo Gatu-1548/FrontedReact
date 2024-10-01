@@ -1,0 +1,140 @@
+/* Contenedor principal del formulario de registro */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* Contenedor principal del Registro */
+.register-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6dd5ed, #2193b0); /* Fondo con degradado */
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif; /* Fuente moderna */
+}
+
+/* Caja del formulario de registro */
+.register-form {
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 40px 60px; /* Espaciado interno */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  width: 100%;
+  max-width: 400px;
+  text-align: center; /* Centrar el contenido */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Añadir efecto hover a la caja del registro */
+.register-form:hover {
+  transform: translateY(-5px); /* Elevar la caja en hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Incrementar la sombra en hover */
+}
+
+/* Título del formulario de registro */
+.register-form h2 {
+  font-size: 2rem;
+  color: #333333; /* Color del texto */
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* Grupo de formulario */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Input de formulario */
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px; /* Bordes redondeados */
+  border: 1px solid #dddddd;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra interna */
+  font-size: 1rem;
+  text-align: center; /* Centrar el texto */
+  transition: border 0.3s ease; /* Transición para el borde */
+}
+
+/* Estilo del input en foco */
+.form-control:focus {
+  border-color: #2193b0; /* Cambiar el borde a azul en foco */
+  outline: none;
+}
+
+/* Botón de Registro */
+.btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #2193b0; /* Color principal */
+  color: white;
+  border: none;
+  border-radius: 30px; /* Bordes redondeados */
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Hover en el botón de registro */
+.btn:hover {
+  background-color: #176582; /* Cambiar a un azul más oscuro en hover */
+  transform: translateY(-2px); /* Elevar ligeramente el botón */
+}
+
+/* Mensaje de éxito */
+.success-message {
+  color: #28a745; /* Color verde para éxito */
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+/* Mensaje de error */
+.error-message {
+  color: #ff4d4f; /* Color rojo para errores */
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+/* Ajustes para pantallas medianas (tablets) */
+@media (max-width: 768px) {
+  .register-form {
+    padding: 30px;
+  }
+
+  .register-form h2 {
+    font-size: 1.8rem;
+  }
+
+  .form-control {
+    padding: 10px;
+  }
+
+  .btn {
+    padding: 12px;
+  }
+}
+
+/* Ajustes para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  .register-form {
+    padding: 20px;
+  }
+
+  .register-form h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-control {
+    padding: 8px;
+  }
+
+  .btn {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .success-message, .error-message {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,171 @@
+/* .inventario-container {
+    padding: 20px;
+  }
+  
+  .inventario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .inventario-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .inventario-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .inventario-imagen {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .inventario-info {
+    padding: 16px;
+  }
+  
+  .color-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .color-cuadro {
+    border: 1px solid #000;
+  }
+   */
+
+/* Contenedor de la tabla */
+/* Contenedor principal */
+.inventario-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del título */
+.titulo-inventario {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Tabla */
+.inventario-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+/* Encabezados de la tabla */
+.inventario-tabla th {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+/* Filas de la tabla */
+.inventario-tabla td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center; /* Centrar el contenido */
+}
+
+/* Alternar colores de fondo en filas */
+.inventario-tabla tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Estilo al pasar el cursor por las filas */
+.inventario-tabla tr:hover {
+  background-color: #ddd;
+}
+
+/* Cuadro de color en la tabla */
+.color-cuadro {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border: 1px solid #000;
+  vertical-align: middle;
+}
+
+/* Responsivo: Ajustes para tablets y pantallas medianas */
+@media (max-width: 768px) {
+  .inventario-container {
+    padding: 15px;
+    width: 95%;
+  }
+
+  .titulo-inventario {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .inventario-tabla th, .inventario-tabla td {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* Ocultar algunas columnas para pantallas medianas */
+  .inventario-tabla th:nth-child(3),
+  .inventario-tabla td:nth-child(3),
+  .inventario-tabla th:nth-child(4),
+  .inventario-tabla td:nth-child(4) {
+    display: none; /* Ocultar columnas de descripción y precio */
+  }
+}
+
+/* Responsivo: Ajustes para dispositivos móviles */
+@media (max-width: 480px) {
+  .inventario-container {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .titulo-inventario {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .inventario-tabla th, .inventario-tabla td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  /* Ocultar más columnas en dispositivos pequeños */
+  .inventario-tabla th:nth-child(1),
+  .inventario-tabla td:nth-child(1),
+  .inventario-tabla th:nth-child(3),
+  .inventario-tabla td:nth-child(3),
+  .inventario-tabla th:nth-child(4),
+  .inventario-tabla td:nth-child(4) {
+    display: none; /* Ocultar columnas de ID, descripción y precio */
+  }
+
+  .inventario-tabla th:nth-child(2) {
+    text-align: left;
+  }
+
+  .inventario-tabla td:nth-child(2) {
+    text-align: left;
+  }
+
+  /* Ajustes del contenedor del color */
+  .color-cuadro {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+  }
+}

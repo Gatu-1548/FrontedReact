@@ -1,0 +1,90 @@
+/* Contenedor principal */
+.pago-efectivo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+  background-color: #f0f0f0; /* Fondo claro */
+  padding: 20px;
+}
+
+/* Estilo para la tarjeta */
+.pago-efectivo-card {
+  background-color: white; /* Fondo blanco */
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 500px; /* Ancho máximo de la tarjeta */
+  width: 100%; /* Ajusta el ancho de la tarjeta a 100% del contenedor */
+  text-align: center; /* Centrar el texto */
+  transition: transform 0.3s ease; /* Transición para hover */
+}
+
+/* Hover para la tarjeta */
+.pago-efectivo-card:hover {
+  transform: scale(1.02); /* Aumentar el tamaño al pasar el mouse */
+}
+
+/* Estilo para el título */
+.pago-efectivo-card h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Estilo para el párrafo */
+.pago-efectivo-card p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6; /* Espaciado entre líneas */
+}
+
+/* Responsividad: Estilo para pantallas medianas y pequeñas */
+@media (max-width: 1024px) {
+  .pago-efectivo-card {
+    padding: 25px; /* Ajusta el padding para pantallas medianas */
+  }
+  
+  .pago-efectivo-card h2 {
+    font-size: 26px;
+  }
+  
+  .pago-efectivo-card p {
+    font-size: 17px;
+  }
+}
+
+/* Responsive: Ajustar diseño en pantallas pequeñas */
+@media (max-width: 768px) {
+  .pago-efectivo-card {
+    width: 95%; /* Ancho de tarjeta en pantallas pequeñas */
+    padding: 20px; /* Reduce el padding en pantallas pequeñas */
+  }
+
+  .pago-efectivo-card h2 {
+    font-size: 24px;
+  }
+
+  .pago-efectivo-card p {
+    font-size: 16px;
+  }
+}
+
+/* Responsividad para dispositivos móviles */
+@media (max-width: 480px) {
+  .pago-efectivo-card {
+    width: 100%; /* Ancho completo en dispositivos móviles */
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .pago-efectivo-card h2 {
+    font-size: 20px;
+  }
+
+  .pago-efectivo-card p {
+    font-size: 14px;
+  }
+}

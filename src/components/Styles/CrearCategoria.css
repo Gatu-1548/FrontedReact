@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* Contenedor principal */
+.crear-categoria-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra */
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+/* Título de Crear Categoría */
+.crear-categoria-title {
+  font-size: 2rem;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+/* Input de Crear Categoría */
+.crear-categoria-input {
+  width: calc(100% - 40px); /* Ancho total menos padding */
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box; /* Incluir padding en el ancho total */
+  transition: border-color 0.3s ease;
+}
+
+.crear-categoria-input:focus {
+  border-color: #4CAF50; /* Verde suave al enfocar */
+  outline: none; /* Eliminar borde del navegador */
+}
+
+/* Botón de Crear Categoría */
+.crear-categoria-button {
+  background-color: #0066cc; /* Fondo verde */
+  color: white; /* Texto blanco */
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.crear-categoria-button:hover {
+  background-color: #0066cc; /* Fondo verde oscuro */
+  transform: translateY(-2px); /* Elevar ligeramente */
+}
+
+.crear-categoria-button:active {
+  transform: scale(0.98); /* Reducir ligeramente al hacer clic */
+}
+
+/* Título de la lista de categorías */
+.categoria-list-title {
+  font-size: 1.5rem;
+  color: #333333;
+  margin-top: 30px;
+}
+
+/* Lista de categorías */
+.categoria-list {
+  list-style: none; /* Eliminar viñetas */
+  padding: 0;
+  margin: 20px 0;
+}
+
+/* Elementos de la lista de categorías */
+.categoria-list-item {
+  font-size: 1.2rem;
+  color: #555555;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd; /* Línea divisoria */
+}
+
+/* Responsividad para pantallas medianas */
+@media (max-width: 768px) {
+  .crear-categoria-container {
+    padding: 30px;
+  }
+
+  .crear-categoria-title {
+    font-size: 1.8rem;
+  }
+
+  .crear-categoria-input {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+
+  .crear-categoria-button {
+    padding: 12px 25px;
+    font-size: 16px;
+  }
+
+  .categoria-list-item {
+    font-size: 1rem;
+  }
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 480px) {
+  .crear-categoria-container {
+    padding: 20px;
+  }
+
+  .crear-categoria-title {
+    font-size: 1.5rem;
+  }
+
+  .crear-categoria-input {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+
+  .crear-categoria-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .categoria-list-item {
+    font-size: 0.9rem;
+  }
+}

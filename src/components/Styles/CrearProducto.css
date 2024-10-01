@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* Contenedor principal */
+.crear-producto-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif; /* Fuente moderna */
+}
+
+/* Título del formulario */
+.crear-producto-container h2 {
+    text-align: center;
+    color: #333333;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Estilos de los campos del formulario */
+.form-group {
+    margin-bottom: 20px;
+    width: 100%; /* Asegura que el grupo ocupe todo el ancho */
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600; /* Negrita para el label */
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 30px; /* Bordes redondeados */
+    font-size: 1rem;
+    color: #333333;
+    box-sizing: border-box; /* Incluir el padding en el tamaño total */
+    transition: border 0.3s ease, background-color 0.3s ease; /* Transiciones */
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2193b0; /* Borde azul en foco */
+    background-color: #f0f8ff; /* Fondo claro en foco */
+}
+
+/* Botón para crear el producto */
+.crear-producto-boton {
+    width: 100%;
+    padding: 15px;
+    background-color: #2193b0; /* Azul claro */
+    color: white;
+    border: none;
+    border-radius: 30px; /* Bordes redondeados */
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra */
+    margin-top: 20px;
+}
+
+/* Hover del botón */
+.crear-producto-boton:hover {
+    background-color: #176582; /* Azul más oscuro */
+    transform: translateY(-3px); /* Elevar ligeramente */
+}
+
+/* Contenedor de colores seleccionados */
+.colores-seleccionados {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Cuadro de color */
+.color-cuadro {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border: 2px solid #ddd; /* Borde para resaltar */
+    border-radius: 50%; /* Hacer el cuadro circular */
+    margin: 5px;
+}
+
+/* Contenedor de cantidad por color */
+.color-cantidad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Separar elementos */
+    margin-bottom: 10px;
+}
+
+/* Input de cantidad */
+.color-cantidad input {
+    width: 80px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 30px; /* Bordes redondeados */
+    font-size: 16px;
+    text-align: center; /* Centrar el texto */
+}
+
+/* Mensaje de éxito o error */
+.mensaje {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #28a745; /* Verde para el éxito */
+    font-weight: 600;
+}
+
+/* Estilo del botón para agregar colores */
+.agregar-color-boton {
+    background-color: #176582; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 15px;
+}
+
+/* Hover del botón de agregar color */
+.agregar-color-boton:hover {
+    background-color: #176582; /* Verde más oscuro */
+    transform: translateY(-2px); /* Elevar ligeramente */
+}
+
+/* Responsividad para pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+    .crear-producto-container {
+        padding: 30px;
+    }
+
+    .form-group input {
+        padding: 12px;
+    }
+
+    .crear-producto-boton {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .color-cantidad input {
+        width: 70px;
+        font-size: 14px;
+    }
+}
+
+/* Responsividad para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .crear-producto-container {
+        padding: 20px;
+        box-shadow: none; /* Eliminar sombra en pantallas pequeñas */
+    }
+
+    .crear-producto-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .form-group input {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .crear-producto-boton {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .color-cantidad input {
+        width: 60px;
+        font-size: 12px;
+    }
+
+    .agregar-color-boton {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}
+
+/* Responsividad para pantallas muy pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+    .crear-producto-container {
+        padding: 15px;
+    }
+
+    .crear-producto-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-group input {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .crear-producto-boton {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .color-cantidad input {
+        width: 50px;
+        font-size: 12px;
+    }
+
+    .agregar-color-boton {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}

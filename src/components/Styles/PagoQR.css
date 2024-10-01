@@ -1,0 +1,118 @@
+/* Contenedor principal */
+.pago-qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Asegura que ocupe el 100% de la altura de la ventana */
+  background-color: #f0f0f0; /* Fondo claro */
+  padding: 20px;
+}
+
+/* Estilo para la tarjeta */
+.pago-qr-card {
+  background-color: white; /* Fondo blanco */
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 600px; /* Ancho máximo de la tarjeta */
+  width: 100%;
+  text-align: center; /* Centrar el texto */
+  transition: transform 0.3s ease; /* Transición para hover */
+}
+
+/* Hover para la tarjeta */
+.pago-qr-card:hover {
+  transform: scale(1.02); /* Aumentar el tamaño al pasar el mouse */
+}
+
+/* Estilo para el título */
+.pago-qr-card h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Estilo para el párrafo */
+.pago-qr-card p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6; /* Espaciado entre líneas */
+}
+
+/* Estilo para la imagen QR */
+.qr-imagen {
+  width: 100%;
+  height: auto; /* Mantener la proporción de la imagen */
+  max-width: 350px; /* Aumentar el tamaño máximo */
+  max-height: 350px; /* Aumentar el tamaño máximo */
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  object-fit: contain; /* Ajusta la imagen sin distorsionarla */
+}
+
+/* Responsive: Ajustar diseño en pantallas medianas */
+@media (max-width: 1024px) {
+  .pago-qr-card {
+    width: 80%; /* Ancho de tarjeta en pantallas medianas */
+    padding: 25px;
+  }
+
+  .pago-qr-card h2 {
+    font-size: 26px; /* Ajustar tamaño del título */
+  }
+
+  .pago-qr-card p {
+    font-size: 17px; /* Ajustar tamaño del párrafo */
+  }
+
+  .qr-imagen {
+    max-width: 300px; /* Ajuste de tamaño para pantallas medianas */
+    max-height: 300px;
+  }
+}
+
+/* Responsive: Ajustar diseño en pantallas pequeñas */
+@media (max-width: 768px) {
+  .pago-qr-card {
+    width: 90%; /* Ancho de tarjeta en pantallas pequeñas */
+    padding: 20px;
+  }
+
+  .pago-qr-card h2 {
+    font-size: 24px;
+  }
+
+  .pago-qr-card p {
+    font-size: 16px;
+  }
+
+  .qr-imagen {
+    max-width: 250px; /* Ajuste de tamaño para pantallas pequeñas */
+    max-height: 250px;
+  }
+}
+
+/* Responsive: Ajustar diseño en dispositivos móviles */
+@media (max-width: 480px) {
+  .pago-qr-card {
+    width: 95%; /* Ancho de tarjeta en dispositivos móviles */
+    padding: 15px;
+  }
+
+  .pago-qr-card h2 {
+    font-size: 20px; /* Ajustar tamaño del título */
+  }
+
+  .pago-qr-card p {
+    font-size: 14px; /* Ajustar tamaño del párrafo */
+  }
+
+  .qr-imagen {
+    max-width: 200px; /* Ajuste de tamaño para dispositivos móviles */
+    max-height: 200px;
+  }
+}

@@ -1,0 +1,96 @@
+/* Contenedor principal */
+.seleccionar-pago-container {
+  padding: 40px;
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #f8f8f8; /* Fondo claro */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centrar el contenido */
+  transition: all 0.3s ease; /* Transición suave para cambios de tamaño */
+}
+
+/* Estilo para el título */
+.seleccionar-pago-container h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Contenedor de los botones */
+.botones-pago {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center; /* Centrar botones */
+}
+
+/* Estilo para los botones */
+.boton-pago {
+  background-color: #4CAF50; /* Color de fondo verde */
+  color: white; /* Color de texto */
+  border: none;
+  border-radius: 8px;
+  padding: 15px 30px; /* Tamaño del botón */
+  font-size: 18px; /* Tamaño de la fuente */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave */
+}
+
+.boton-pago:hover {
+  background-color: #45a049; /* Color más oscuro al pasar el mouse */
+}
+
+.boton-pago:active {
+  transform: scale(0.98); /* Efecto de clic */
+}
+
+/* Responsive: Ajustar diseño en pantallas medianas */
+@media (max-width: 1024px) {
+  .seleccionar-pago-container {
+    width: 80%; /* Ancho de la tarjeta en pantallas medianas */
+    padding: 30px;
+  }
+
+  .boton-pago {
+    width: 80%; /* Botones más anchos en pantallas medianas */
+    font-size: 17px; /* Tamaño de fuente ajustado */
+  }
+}
+
+/* Responsive: Ajustar diseño en pantallas pequeñas */
+@media (max-width: 768px) {
+  .seleccionar-pago-container {
+    width: 90%; /* Ancho de la tarjeta en pantallas pequeñas */
+    padding: 25px;
+  }
+
+  .seleccionar-pago-container h2 {
+    font-size: 22px; /* Ajustar el tamaño del título */
+  }
+
+  .boton-pago {
+    width: 100%; /* Botones ocupan todo el ancho */
+    font-size: 16px; /* Tamaño de fuente más pequeño */
+  }
+}
+
+/* Responsive: Ajustar diseño en dispositivos móviles */
+@media (max-width: 480px) {
+  .seleccionar-pago-container {
+    width: 95%; /* Ancho de la tarjeta en dispositivos móviles */
+    padding: 20px;
+    margin: 30px auto; /* Reducir el margen superior e inferior */
+  }
+
+  .seleccionar-pago-container h2 {
+    font-size: 20px; /* Ajustar el tamaño del título */
+  }
+
+  .boton-pago {
+    padding: 12px 20px; /* Reducir el padding en dispositivos móviles */
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+  }
+}

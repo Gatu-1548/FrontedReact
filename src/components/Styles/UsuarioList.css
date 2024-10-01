@@ -1,0 +1,159 @@
+/* Contenedor principal */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* Contenedor principal */
+.usuarios-list-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  background-color: #ffffff;
+  padding: 30px 50px; /* Espaciado interno */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  font-family: 'Montserrat', sans-serif; /* Fuente más moderna */
+}
+
+/* Estilo del título */
+.title {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* Tabla de usuarios */
+.usuarios-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px; /* Espaciado entre filas */
+  background-color: #f7f9fc; /* Color de fondo claro para la tabla */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+
+/* Encabezado y celdas de la tabla */
+.usuarios-table th, .usuarios-table td {
+  padding: 15px 20px;
+  text-align: left;
+}
+
+/* Encabezado de la tabla */
+.usuarios-table th {
+  background-color: #2193b0; /* Fondo azul para el encabezado */
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Celdas de la tabla */
+.usuarios-table td {
+  background-color: #ffffff; /* Fondo blanco para las celdas */
+  border-bottom: 1px solid #ddd; /* Línea inferior */
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Filas pares con color de fondo alternado */
+.usuarios-table tr:nth-child(even) td {
+  background-color: #f2f2f2; /* Fondo gris claro */
+}
+
+/* Estilo del dropdown para seleccionar roles */
+.role-select {
+  margin-right: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 30px; /* Bordes redondeados */
+  background-color: #f7f9fc; /* Fondo claro */
+  font-size: 14px;
+  color: #333;
+  transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+.role-select:focus {
+  outline: none;
+  border-color: #2193b0;
+  background-color: #e7f0f7; /* Cambiar fondo en focus */
+}
+
+/* Botón de asignar rol */
+.assign-role-button {
+  background-color: #2193b0; /* Color azul */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px; /* Bordes redondeados */
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Hover en el botón */
+.assign-role-button:hover {
+  background-color: #176582; /* Cambiar a un tono más oscuro en hover */
+  transform: translateY(-2px); /* Elevar ligeramente el botón */
+}
+
+/* Estilo del mensaje de error */
+.error-message {
+  color: #ff4d4f;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+/* Efecto hover en las filas de la tabla */
+.usuarios-table tr:hover td {
+  background-color: #e7f0f7; /* Cambiar fondo en hover */
+}
+
+/* Hacer la tabla responsiva en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .usuarios-table thead {
+    display: none;
+  }
+
+  .usuarios-table tr {
+    display: block;
+    margin-bottom: 15px; /* Espacio entre filas */
+    border-bottom: 2px solid #ddd;
+  }
+
+  .usuarios-table td {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+  }
+
+  .usuarios-table td::before {
+    content: attr(data-label); /* Mostrar el nombre de la columna */
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 10px;
+    display: inline-block;
+    color: #333;
+  }
+
+  /* Estilo del dropdown y botón en pantallas pequeñas */
+  .role-select, .assign-role-button {
+    width: 100%; /* Ocupa todo el ancho */
+    margin-bottom: 10px;
+  }
+
+  /* Estilo del contenedor */
+  .usuarios-list-container {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 1.5rem; /* Reducir el tamaño del título */
+  }
+}

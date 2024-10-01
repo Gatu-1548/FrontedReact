@@ -1,0 +1,240 @@
+/* Contenedor principal de la lista de productos */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* Contenedor principal de la lista de productos */
+.productos-list-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 30px 50px;
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  font-family: 'Montserrat', sans-serif; /* Fuente moderna */
+}
+
+/* Título del catálogo */
+.productos-list-container h2 {
+  text-align: center;
+  color: #333333;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* Cuadrícula de productos */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ajustar a diferentes tamaños */
+  gap: 30px; /* Espacio entre tarjetas */
+}
+
+/* Tarjeta de producto */
+.producto-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #f9f9f9; /* Fondo gris claro */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05); /* Sombra suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+/* Efecto hover en la tarjeta */
+.producto-card:hover {
+  transform: translateY(-5px); /* Elevar la tarjeta */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Incrementar la sombra */
+}
+
+/* Imagen del producto */
+.producto-imagen {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Estilos de los textos en las tarjetas */
+.producto-card h3 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: #333333;
+  font-weight: 600;
+}
+
+.producto-card p {
+  color: #666666;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* Contenedor de colores disponibles */
+.colores-disponibles {
+  margin: 15px 0;
+}
+
+/* Estilos para los colores */
+.color-cuadro {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  border: 1px solid #000;
+  border-radius: 50%; /* Hacer los colores circulares */
+  margin: 5px;
+}
+
+/* Contenedor de la cantidad */
+.cantidad-container {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Label de la cantidad */
+.cantidad-container label {
+  font-size: 1rem;
+  color: #333333;
+}
+
+/* Input de cantidad */
+.cantidad-container input {
+  width: 60px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 30px; /* Bordes redondeados */
+  margin-left: 10px;
+  text-align: center; /* Centrar el número */
+  transition: border 0.3s ease;
+}
+
+.cantidad-container input:focus {
+  outline: none;
+  border-color: #2193b0; /* Borde azul en foco */
+}
+
+/* Botón de agregar al carrito */
+.producto-card button {
+  background-color: #2193b0;
+  color: white;
+  border: none;
+  border-radius: 30px; /* Bordes redondeados */
+  padding: 15px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  width: 100%; /* Botón ocupa todo el ancho */
+  margin-top: 15px;
+}
+
+/* Hover en el botón */
+.producto-card button:hover {
+  background-color: #176582; /* Cambiar a un tono más oscuro */
+  transform: translateY(-2px); /* Elevar ligeramente */
+}
+
+/* Mensaje de error */
+.error-message {
+  color: #ff4d4f;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+/* Responsividad para pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+  .producto-imagen {
+    height: 150px; /* Reducir altura de la imagen */
+  }
+
+  .producto-card {
+    padding: 20px;
+  }
+
+  .producto-card h3 {
+    font-size: 1.3rem; /* Reducir tamaño de texto */
+  }
+
+  .producto-card p {
+    font-size: 0.9rem; /* Reducir tamaño de texto */
+  }
+
+  .cantidad-container input {
+    width: 50px; /* Ancho reducido */
+    font-size: 14px;
+  }
+
+  .producto-card button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+/* Responsividad para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .productos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajustar columnas para móviles */
+    gap: 15px;
+  }
+
+  .producto-imagen {
+    height: 120px; /* Reducir altura de la imagen */
+  }
+
+  .producto-card {
+    padding: 15px;
+  }
+
+  .producto-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .producto-card p {
+    font-size: 0.8rem;
+  }
+
+  .cantidad-container input {
+    width: 45px;
+  }
+
+  .producto-card button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+/* Responsividad para pantallas muy pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+  .productos-grid {
+    grid-template-columns: 1fr; /* Mostrar en una sola columna */
+  }
+
+  .producto-imagen {
+    height: 100px; /* Reducir altura de la imagen */
+  }
+
+  .producto-card {
+    padding: 10px;
+  }
+
+  .producto-card h3 {
+    font-size: 1rem;
+  }
+
+  .producto-card p {
+    font-size: 0.75rem;
+  }
+
+  .cantidad-container input {
+    width: 40px;
+    font-size: 12px;
+  }
+
+  .producto-card button {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+}
