@@ -272,7 +272,6 @@
 
 
 
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import { ChromePicker } from 'react-color';  // Importa el selector de color
@@ -319,33 +318,36 @@ const CrearProducto = () => {
       [color]: cantidad
     });
   };
+
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     // Crear un objeto FormData para enviar los datos al backend
     const formData = new FormData();
     formData.append('nombre', producto.nombre);
     formData.append('descripcion', producto.descripcion);
     formData.append('precio', producto.precio);
     formData.append('imagen', imagen); // Adjuntar la imagen
-  
+
     // Adjuntar los colores seleccionados como parámetros separados
     coloresSeleccionados.forEach((colorHex) => {
       formData.append('nuevoColor', colorHex);  // Agregar cada color como 'nuevoColor'
     });
-  
+
     // Convertir el inventario a JSON y agregarlo al formData
     formData.append('inventario', JSON.stringify(
       coloresSeleccionados.map((color) => ({
-        color: color,
+        color: color,  // Asegurarse de enviar el campo color en JSON
         cantidad: cantidades[color] || 0  // Agregar la cantidad de cada color, si no hay cantidad, agregar 0
       }))
     ));
-  
+
     try {
       // Obtener el token almacenado en localStorage
       const token = localStorage.getItem('token');
-  
+
       // Realizar la petición POST al backend para crear el producto con imagen y colores
       const response = await axios.post(
         'https://backendspring.onrender.com/api/productos/crear-con-imagen-y-inventario',
@@ -357,7 +359,7 @@ const CrearProducto = () => {
           }
         }
       );
-  
+
       // Mensaje de éxito si la operación se completa correctamente
       setMensaje('Producto creado exitosamente');
       setProducto({ nombre: '', descripcion: '', precio: '' });
@@ -369,8 +371,8 @@ const CrearProducto = () => {
       console.error('Error al crear el producto', error);
       setMensaje('Error al crear el producto');
     }
-  };
-  
+};
+
   
 
   return (
