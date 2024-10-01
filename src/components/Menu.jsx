@@ -20,7 +20,7 @@ const Menu = () => {
   return (
     <div className="menu-container">
       <div className="menu-card">
-        <h2>Bienvenido, {username}!</h2>
+        <h2></h2>
         {/* Aquí va el contenido específico del menú */}
       </div>
     </div>

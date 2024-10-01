@@ -120,8 +120,8 @@ const Navbar = ({ onLogout }) => {
       {/* Lista de enlaces del navbar */}
       <ul className="navbar-links">
         <li><Link to="/">Inicio</Link></li>
-        <li><Link to="/perfil">Perfil</Link></li>
-        <li><Link to="/carritodecompras">Carrito</Link></li>
+        <li><Link to="/perfil">Perfil Usuario</Link></li>
+        <li><Link to="/carritodecompras">Carrito de Compras</Link></li>
 
         {/* Menú de Catálogo */}
         <li
@@ -130,9 +130,9 @@ const Navbar = ({ onLogout }) => {
         >
           <Link to="#">Catálogo</Link>
           <ul className="dropdown-menu">
-            <li><Link to="/productolist">Ver Catálogo de Prendas</Link></li>
+            <li><Link to="/productolist">Mostrar Catálogo de Prendas</Link></li>
             {(roles.includes('ROLE_ADMIN') || roles.includes('ROLE_ADMIN_DE_PRODUCTOS')) && (
-              <li><Link to="/crear-producto">Crear Prenda</Link></li>
+              <li><Link to="/crear-producto">Añadir Prenda</Link></li>
             )}
           </ul>
         </li>
@@ -146,14 +146,14 @@ const Navbar = ({ onLogout }) => {
           <ul className="dropdown-menu">
             {/* Mostrar solo la vista de 'Productos por Categoría' si el rol es 'ROLE_USER' */}
             {roles.includes('ROLE_USER') && (
-              <li><Link to="/productosporcategoria">Productos por Categoría</Link></li>
+              <li><Link to="/productosporcategoria"> Productos por Categoría</Link></li>
             )}
             {/* Mostrar todas las opciones si el rol es 'ROLE_ADMIN' o 'ROLE_ADMIN_DE_PRODUCTOS' */}
             {(roles.includes('ROLE_ADMIN') || roles.includes('ROLE_ADMIN_DE_PRODUCTOS')) && (
               <>
-                <li><Link to="/crearcategoria">Crear Categoría</Link></li>
+                <li><Link to="/crearcategoria">Añadir Categoría</Link></li>
                 <li><Link to="/asignarproductoscategoria">Asignar Productos a Categoría</Link></li>
-                <li><Link to="/productosporcategoria">Productos por Categoría</Link></li>
+                <li><Link to="/productosporcategoria">Mostrar Productos por Categoría</Link></li>
               </>
             )}
           </ul>
@@ -161,7 +161,7 @@ const Navbar = ({ onLogout }) => {
 
         {roles.includes('ROLE_ADMIN') && (
           <>
-            <li><Link to="/usuarios">Usuarios</Link></li>
+            <li><Link to="/usuarios">Lista Usuarios</Link></li>
           </>
         )}
 

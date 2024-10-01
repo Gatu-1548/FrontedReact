@@ -12,10 +12,7 @@ const AsignarProductosACategoria = () => {
   useEffect(() => {
     const fetchCategorias = async () => {
       try {
-        // Obtener el token almacenado en localStorage
         const token = localStorage.getItem('token');
-
-        // Realizar la solicitud con el token en las cabeceras
         const response = await axios.get('https://backendspring.onrender.com/api/categorias/listar', {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -34,10 +31,7 @@ const AsignarProductosACategoria = () => {
 
     const fetchProductos = async () => {
       try {
-        // Obtener el token almacenado en localStorage
         const token = localStorage.getItem('token');
-
-        // Realizar la solicitud con el token en las cabeceras
         const response = await axios.get('https://backendspring.onrender.com/api/productos', {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -65,16 +59,13 @@ const AsignarProductosACategoria = () => {
     }
 
     try {
-      // Obtener el token almacenado en localStorage
       const token = localStorage.getItem('token');
-
-      // Realizar la solicitud con el token en las cabeceras
       await axios.post(
         `https://backendspring.onrender.com/api/categorias/${selectedCategoria}/asignar-productos`,
         selectedProductos,
         {
           headers: {
-            Authorization: `Bearer ${token}`, // Añadir la cabecera de autorización con el token
+            Authorization: `Bearer ${token}`,
           },
         }
       );
@@ -87,76 +78,61 @@ const AsignarProductosACategoria = () => {
   };
 
   if (error) {
-    return <div className="error-message">{error}</div>;
+    return <div style={styles.errorMessage}>{error}</div>;
   }
 
   return (
-    <div className="asignar-productos-container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px' }}>
-      <h2>Asignar Productos a Categoría</h2>
+    <div style={styles.container}>
+      <h2 style={styles.title}>Asignar Productos a Categoría</h2>
 
       {/* Selector de Categoría */}
-      <div className="categoria-selector" style={{ marginBottom: '20px' }}>
-        <label>Seleccionar Categoría</label>
+      <div style={styles.selectorContainer}>
+        <label style={styles.label}>Seleccionar Categoría</label>
         <select
           value={selectedCategoria}
           onChange={(e) => setSelectedCategoria(e.target.value)}
-          style={{ marginLeft: '10px', padding: '5px', borderRadius: '5px' }}
+          style={styles.select}
         >
           <option value="">Seleccionar Categoría</option>
-          {Array.isArray(categorias) && categorias.map((categoria) => (
-            <option key={categoria.id} value={categoria.id}>
-              {categoria.nombre}
-            </option>
-          ))}
+          {Array.isArray(categorias) &&
+            categorias.map((categoria) => (
+              <option key={categoria.id} value={categoria.id}>
+                {categoria.nombre}
+              </option>
+            ))}
         </select>
       </div>
 
       {/* Lista de Productos en tarjetas */}
-      <div className="productos-grid" style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
-        gap: '20px',
-      }}>
+      <div style={styles.productGrid}>
         {productos.length === 0 ? (
-          <p>No hay productos disponibles</p>
+          <p style={styles.noProductsMessage}>No hay productos disponibles</p>
         ) : (
           productos.map((producto) => (
-            <div key={producto.id} className="producto-card" style={{
-              border: '1px solid #ccc',
-              borderRadius: '10px',
-              padding: '20px',
-              backgroundColor: '#fff',
-              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between'
-            }}>
+            <div key={producto.id} style={styles.productCard}>
               <img
                 src={`https://backendspring.onrender.com/api/productos/imagen/${producto.imagenUrl.split('/').pop()}`}
                 alt={producto.nombre}
-                className="producto-imagen"
-                style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '10px' }}
+                style={styles.productImage}
               />
-              <div className="producto-detalles" style={{ flexGrow: 1, textAlign: 'center', marginTop: '10px' }}>
-                <h3 style={{ marginBottom: '10px', fontSize: '18px', fontWeight: 'bold' }}>{producto.nombre}</h3>
-                <p style={{ fontSize: '14px', color: '#555' }}>{producto.descripcion}</p>
-                <p style={{ fontWeight: 'bold', marginTop: '10px' }}>Precio: ${producto.precio}</p>
+              <div style={styles.productDetails}>
+                <h3 style={styles.productName}>{producto.nombre}</h3>
+                <p style={styles.productDescription}>{producto.descripcion}</p>
+                <p style={styles.productPrice}>Precio: ${producto.precio}</p>
               </div>
-              <div className="producto-checkbox" style={{ marginTop: '10px' }}>
+              <div style={styles.checkboxContainer}>
                 <input
                   type="checkbox"
                   value={producto.id}
                   onChange={(e) => {
                     const selected = e.target.checked;
                     setSelectedProductos((prev) =>
-                      selected
-                        ? [...prev, producto.id]
-                        : prev.filter((id) => id !== producto.id)
+                      selected ? [...prev, producto.id] : prev.filter((id) => id !== producto.id)
                     );
                   }}
-                  style={{ marginRight: '10px' }}
+                  style={styles.checkbox}
                 />
-                <label>Seleccionar</label>
+                <label style={styles.checkboxLabel}>Seleccionar</label>
               </div>
             </div>
           ))
@@ -165,24 +141,143 @@ const AsignarProductosACategoria = () => {
 
       {/* Botón de Asignar */}
       <button
-        className="asignar-button"
+        style={styles.assignButton}
         onClick={handleAsignar}
-        style={{
-          backgroundColor: '#61b469',
-          color: '#fff',
-          padding: '10px 20px',
-          border: 'none',
-          borderRadius: '5px',
-          fontSize: '16px',
-          cursor: 'pointer',
-          marginTop: '20px',
-          width: '100%',
-        }}
       >
         Asignar a Categoría
       </button>
     </div>
   );
+};
+
+// Estilos en línea
+const styles = {
+  container: {
+    maxWidth: '1200px',
+    margin: '40px auto',
+    padding: '30px',
+    backgroundColor: '#ffffff',
+    borderRadius: '12px',
+    boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)',
+    fontFamily: "'Montserrat', sans-serif",
+  },
+  title: {
+    textAlign: 'center',
+    color: '#333333',
+    fontSize: '2rem',
+    marginBottom: '30px',
+    fontWeight: '600',
+  },
+  selectorContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: '30px',
+  },
+  label: {
+    fontSize: '1rem',
+    fontWeight: 'bold',
+    color: '#333333',
+    marginRight: '10px',
+  },
+  select: {
+    padding: '10px',
+    fontSize: '1rem',
+    borderRadius: '8px',
+    border: '1px solid #ddd',
+    width: '250px',
+    transition: 'border-color 0.3s ease',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+  },
+  productGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
+    gap: '30px',
+    justifyContent: 'center',
+  },
+  productCard: {
+    border: '1px solid #ddd',
+    borderRadius: '12px',
+    padding: '20px',
+    backgroundColor: '#f9f9f9',
+    boxShadow: '0 5px 10px rgba(0, 0, 0, 0.05)',
+    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+    textAlign: 'center',
+  },
+  productCardHover: {
+    transform: 'translateY(-5px)',
+    boxShadow: '0 12px 24px rgba(0, 0, 0, 0.15)',
+  },
+  productImage: {
+    width: '100%',
+    height: '180px',
+    objectFit: 'cover',
+    borderRadius: '10px',
+    marginBottom: '15px',
+  },
+  productDetails: {
+    flexGrow: 1,
+    textAlign: 'center',
+    marginTop: '10px',
+  },
+  productName: {
+    fontSize: '1.2rem',
+    fontWeight: 'bold',
+    marginBottom: '10px',
+    color: '#333333',
+  },
+  productDescription: {
+    fontSize: '0.9rem',
+    color: '#555555',
+  },
+  productPrice: {
+    fontWeight: 'bold',
+    marginTop: '10px',
+    fontSize: '1rem',
+    color: '#2193b0',
+  },
+  checkboxContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    marginTop: '15px',
+  },
+  checkbox: {
+    marginRight: '10px',
+  },
+  checkboxLabel: {
+    fontSize: '1rem',
+    color: '#333333',
+  },
+  assignButton: {
+    backgroundColor: '#2193b0',
+    color: 'white',
+    padding: '15px 30px',
+    border: 'none',
+    borderRadius: '8px',
+    fontSize: '1.2rem',
+    cursor: 'pointer',
+    marginTop: '30px',
+    width: '100%',
+    transition: 'background-color 0.3s ease, transform 0.3s ease',
+    boxShadow: '0 5px 10px rgba(0, 0, 0, 0.2)',
+  },
+  assignButtonHover: {
+    backgroundColor: '#176582',
+    transform: 'translateY(-2px)',
+  },
+  errorMessage: {
+    color: '#ff4d4f',
+    textAlign: 'center',
+    fontSize: '18px',
+    marginTop: '20px',
+    fontWeight: '600',
+  },
+  noProductsMessage: {
+    textAlign: 'center',
+    color: '#555',
+    fontSize: '16px',
+    marginTop: '20px',
+  },
 };
 
 export default AsignarProductosACategoria;

@@ -271,7 +271,6 @@
 
 
 
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import { ChromePicker } from 'react-color';  // Importa el selector de color
@@ -350,7 +349,7 @@ const CrearProducto = () => {
 
       // Realizar la petición POST al backend para crear el producto con imagen y colores
       const response = await axios.post(
-        'https://backendspring.onrender.com/api/productos/crear-con-imagen-y-inventario',
+        'https://backedn-nuevo.onrender.com/api/productos/crear-con-imagen-y-inventario',
         formData,
         {
           headers: {

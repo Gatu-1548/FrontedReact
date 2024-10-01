@@ -22,11 +22,11 @@
     transition: transform 0.3s ease; /* Transición suave */
   }
   
-  /* Título del menú */
+  /* Título del menú 
   .menu-card h2 {
     font-size: 2rem;
     color: #333;
-  }
+  }*/
   
   /* Estilo responsivo para tablets */
   @media (max-width: 768px) {

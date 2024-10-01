@@ -1,136 +1,172 @@
 /* Contenedor principal del perfil */
+/* Estilo del contenedor principal */
 .profile-container {
-  max-width: 600px;
-  margin: 50px auto;
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px; /* Ajustar el ancho máximo */
+  margin: 40px auto; /* Centrar el contenedor con margen superior e inferior */
+  padding: 40px; /* Más espacio interno */
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 15px; /* Bordes más redondeados */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+  font-family: 'Montserrat', sans-serif; /* Fuente personalizada */
 }
 
-/* Estilo de los encabezados */
-.profile-container h2, h3 {
+/* Título principal y secundario */
+.profile-container h2, .profile-container h3 {
   text-align: center;
   color: #333;
+  font-size: 2rem; /* Tamaño de fuente ajustado */
+  margin-bottom: 20px; /* Espacio inferior */
+}
+
+/* Títulos secundarios */
+.profile-container h3 {
+  font-size: 1.5rem; /* Tamaño de fuente más pequeño para subtítulos */
+  margin-top: 30px; /* Separación superior */
+  color: #2193b0; /* Color primario */
 }
 
 /* Estilos generales de los formularios */
 .profile-form, .password-form {
   display: flex;
   flex-direction: column;
+  align-items: center; /* Centrar el contenido */
+  padding: 10px 30px; /* Agregar espacio interior */
+  border: 1px solid #ddd; /* Borde suave */
+  border-radius: 10px; /* Bordes redondeados */
+  background-color: #f7f7f7; /* Fondo más claro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
 }
 
-/* Etiquetas de los formularios */
+/* Estilo de las etiquetas de formulario */
 .profile-form label, .password-form label {
-  margin-top: 10px;
+  margin-top: 15px; /* Margen superior */
   margin-bottom: 5px;
-  font-weight: bold;
+  font-weight: 600;
   color: #555;
+  font-size: 16px;
+  align-self: flex-start; /* Alinear al inicio */
 }
 
 /* Campos de entrada de los formularios */
 .profile-form input, .password-form input {
-  padding: 10px;
-  border-radius: 5px;
+  width: 100%; /* Ancho completo */
+  padding: 12px; /* Espaciado interno */
+  border-radius: 8px;
   border: 1px solid #ccc;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   font-size: 16px;
+  transition: border 0.3s ease, box-shadow 0.3s ease; /* Transiciones */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+}
+
+/* Efecto de enfoque en los campos de entrada */
+.profile-form input:focus, .password-form input:focus {
+  outline: none;
+  border-color: #2193b0; /* Borde azul en foco */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
 }
 
 /* Botones */
 .btn {
-  background-color: #4CAF50;
+  background-color: #2193b0; /* Color de fondo */
   color: white;
-  padding: 10px 20px;
+  padding: 12px 25px;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px; /* Bordes más redondeados */
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  margin-top: 10px; /* Separación superior */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
+/* Efecto hover y active en el botón */
 .btn:hover {
-  background-color: #45a049;
+  background-color: #176582; /* Color en hover */
+  transform: translateY(-2px); /* Elevar ligeramente */
+}
+
+.btn:active {
+  transform: translateY(1px); /* Efecto al hacer clic */
 }
 
 /* Mensajes de éxito y error */
-.success-message {
-  color: green;
+.success-message, .error-message {
+  color: #2193b0;
+  font-size: 16px;
   text-align: center;
   margin-top: 20px;
+  font-weight: 600;
 }
 
+/* Mensaje de error */
 .error-message {
-  color: red;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.error {
-  color: red;
-  text-align: center;
+  color: #ff4d4f; /* Rojo para errores */
 }
 
 /* Responsividad para pantallas medianas (tablets) */
 @media (max-width: 1024px) {
   .profile-container {
-    width: 90%; /* Asegura que el contenedor ocupe el 90% del ancho */
-    margin: 30px auto; /* Reduce el margen superior e inferior */
+    width: 90%; /* Ancho del contenedor */
+    padding: 30px;
   }
 
   .profile-form input, .password-form input {
-    font-size: 15px; /* Tamaño de fuente más pequeño */
+    font-size: 15px;
+    padding: 10px;
   }
 
   .btn {
-    font-size: 15px; /* Tamaño de fuente del botón ajustado */
-    padding: 10px 15px; /* Ajustar el padding del botón */
+    font-size: 15px;
+    padding: 10px 20px;
   }
 }
 
 /* Responsividad para pantallas pequeñas (dispositivos móviles) */
 @media (max-width: 768px) {
   .profile-container {
-    width: 95%; /* Ancho del contenedor ajustado para móviles */
-    padding: 15px; /* Padding reducido */
+    width: 95%; /* Ancho del contenedor ajustado */
+    padding: 20px; /* Padding reducido */
   }
 
-  .profile-container h2, h3 {
+  .profile-container h2, .profile-container h3 {
     font-size: 20px; /* Tamaño del encabezado reducido */
   }
 
   .profile-form input, .password-form input {
-    font-size: 14px; /* Tamaño de fuente más pequeño */
+    font-size: 14px;
+    padding: 10px;
   }
 
   .btn {
-    font-size: 14px; /* Tamaño de fuente del botón ajustado */
-    padding: 10px 15px; /* Ajustar el padding del botón */
+    font-size: 14px;
+    padding: 10px 15px;
   }
 }
 
-/* Responsividad para pantallas muy pequeñas (dispositivos con menos de 480px de ancho) */
+/* Responsividad para pantallas muy pequeñas (menos de 480px) */
 @media (max-width: 480px) {
   .profile-container {
-    width: 100%; /* Contenedor ocupa todo el ancho */
-    padding: 10px; /* Padding reducido */
+    width: 100%; /* Ancho completo */
+    padding: 15px;
   }
 
-  .profile-container h2, h3 {
-    font-size: 18px; /* Tamaño del encabezado reducido */
+  .profile-container h2, .profile-container h3 {
+    font-size: 18px; /* Tamaño de fuente reducido */
   }
 
   .profile-form label, .password-form label {
-    font-size: 14px; /* Tamaño de fuente de las etiquetas reducido */
+    font-size: 14px; /* Tamaño de fuente reducido */
   }
 
   .profile-form input, .password-form input {
-    font-size: 13px; /* Tamaño de fuente más pequeño */
-    padding: 8px; /* Reducir el padding en campos de entrada */
+    font-size: 13px; /* Tamaño de fuente reducido */
+    padding: 8px; /* Padding reducido */
   }
 
   .btn {
-    font-size: 13px; /* Tamaño de fuente del botón ajustado */
-    padding: 8px 12px; /* Ajustar el padding del botón */
+    font-size: 13px;
+    padding: 8px 12px;
   }
 }
